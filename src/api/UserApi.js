@@ -22,12 +22,21 @@ export const UserApi = {
 
     registerEmployee(name, lastname, password) {
         const body = {
-            name: name,
-            lastname: lastname,
-            password: password
+            title: name,
+            body: lastname,
+            userId: 1
         }
-        return coreInstanse.post('User/EmployeeRegistration', body)
+        return coreInstanse.post('https://jsonplaceholder.typicode.com/posts', body)
     },
+
+    // registerEmployee(name, lastname, password) {
+    //     const body = {
+    //         name: name,
+    //         lastname: lastname,
+    //         password: password
+    //     }
+    //     return coreInstanse.post('User/EmployeeRegistration', body)
+    // },
 
     getClientInfo(id) {
         return coreInstanse.get(`User/${id}/ClientInformation`)
@@ -42,7 +51,7 @@ export const UserApi = {
     },
 
     getAllUsers() {
-        return coreInstanse.get('User/AllUsers')
+        return axios.get('https://jsonplaceholder.typicode.com/posts')
         .then(response => {
             if (response.status === 200) {
                 return response.data;
@@ -52,6 +61,17 @@ export const UserApi = {
             console.log(error.response.data.error)
         });
     },
+    // getAllUsers() {
+    //     return coreInstanse.get('User/AllUsers')
+    //     .then(response => {
+    //         if (response.status === 200) {
+    //             return response.data;
+    //         }
+    //     })
+    //     .catch(error => {
+    //         console.log(error.response.data.error)
+    //     });
+    // },
 
     blockUser(id) {
         return coreInstanse.put(`User/${id}/block`);

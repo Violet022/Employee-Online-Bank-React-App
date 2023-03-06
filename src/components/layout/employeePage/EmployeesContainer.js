@@ -19,7 +19,7 @@ class EmployeesContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        employees: state.employeePage.employees
+        employeePage: state.employeePage
     }
 }
 

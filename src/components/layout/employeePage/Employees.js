@@ -7,12 +7,10 @@ function Employees(props) {
         <> 
         <ListGroup>
             {
-                this.props.employees.map((emp, idx) => {
-                    return <EmployeeItem employee={emp} onBlockButtonClick={props.blockAnEmployeeThunkCreator} key={idx}/>
+                props.employeePage.employees.map((emp, idx) => {
+                    return <EmployeeItem emp={emp} onBlockButtonClick={props.blockAnEmployeeThunkCreator} key={idx}/>
                 })
             }
-            {/* <EmployeeItem/>
-            <EmployeeItem/> */}
         </ListGroup>
         </>
     );
