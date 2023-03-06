@@ -8,9 +8,9 @@ function EmployeesPage() {
     return (
         <> 
         <NewEmployeeCreationForm/>
-        <Employees/>
+        {/* <Employees/> */}
 
-        {/* <EmployeesContainer/> */}
+        <EmployeesContainer/>
         </>
     )
 }
